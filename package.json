@@ -1,0 +1,20 @@
+{
+  "name": "@nology/angular-test-simplifier",
+  "version": "0.0.1",
+  "description": "Simplifies testing in angular/cli applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "publish": " npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nology-tech/angular-test-simplifier.git"
+  },
+  "author": "Nology",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nology-tech/angular-test-simplifier/issues"
+  },
+  "homepage": "https://github.com/nology-tech/angular-test-simplifier#readme"
+}
