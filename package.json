@@ -1,6 +1,6 @@
 {
   "name": "@nology/angular-test-simplifier",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Simplifies testing in angular/cli applications",
   "main": "dist/index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "@angular/core": "^8.2.2",
     "@types/jasmine": "^3.4.0",
     "@types/node": "^12.7.2",
+    "codelyzer": "^5.1.0",
     "jasmine": "^3.4.0",
     "jasmine-core": "^3.4.0",
     "jasmine-spec-reporter": "^4.2.1",
@@ -36,6 +37,7 @@
     "prettier": "^1.18.2",
     "rxjs": "^6.5.2",
     "ts-node": "^8.3.0",
+    "mem": ">=4.0.0",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.3",
