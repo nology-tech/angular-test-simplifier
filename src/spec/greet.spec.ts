@@ -5,6 +5,6 @@ describe('Initial Test', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should greet', () => {
-    expect(greet()).toBe('Hello World');
+    expect(greet('World')).toBe('Hello World');
   });
 });

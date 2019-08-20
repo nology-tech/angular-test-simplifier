@@ -5,6 +5,6 @@ var index_1 = require("../index");
 describe('Initial Test', function () {
     beforeEach(function () { return testing_1.TestBed.configureTestingModule({}); });
     it('should greet', function () {
-        expect(index_1.greet()).toBe('Hello World');
+        expect(index_1.greet('World')).toBe('Hello World');
     });
 });
