@@ -2,7 +2,7 @@
   "name": "@nology/angular-test-simplifier",
   "version": "0.0.5",
   "description": "Simplifies testing in angular/cli applications",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "tsc && jasmine",
     "build": "tsc",
