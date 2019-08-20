@@ -4,20 +4,46 @@
   "description": "Simplifies testing in angular/cli applications",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "tsc && jasmine",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
     "publish": " npm publish --access public"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nology-tech/angular-test-simplifier.git"
   },
   "author": "Nology",
   "license": "MIT",
-  "peerDependencies": {
-    "@angular/cli": "~8.0.0"
-  },
   "bugs": {
     "url": "https://github.com/nology-tech/angular-test-simplifier/issues"
   },
-  "homepage": "https://github.com/nology-tech/angular-test-simplifier#readme"
+  "homepage": "https://github.com/nology-tech/angular-test-simplifier#readme",
+  "devDependencies": {
+    "@angular/compiler": "^8.2.2",
+    "@angular/core": "^8.2.2",
+    "@types/jasmine": "^3.4.0",
+    "@types/node": "^12.7.2",
+    "jasmine": "^3.4.0",
+    "jasmine-core": "^3.4.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "^0.3.0",
+    "jasmine-ts-console-reporter": "^3.1.1",
+    "prettier": "^1.18.2",
+    "rxjs": "^6.5.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3",
+    "zone.js": "^0.10.2"
+  },
+  "peerDependencies": {
+    "@angular/core": "^8.x",
+    "@angular/compiler": "^8.x",
+    "rxjs": "^6.x"
+  }
 }
