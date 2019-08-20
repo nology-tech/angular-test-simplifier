@@ -45,5 +45,8 @@
     "@angular/core": "^8.x",
     "@angular/compiler": "^8.x",
     "rxjs": "^6.x"
+  },
+  "dependencies": {
+    "@angular/platform-browser": "^8.2.2"
   }
 }
