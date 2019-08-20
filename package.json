@@ -1,6 +1,6 @@
 {
   "name": "@nology/angular-test-simplifier",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Simplifies testing in angular/cli applications",
   "main": "dist/index.js",
   "scripts": {
