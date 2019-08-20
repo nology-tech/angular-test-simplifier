@@ -7,7 +7,7 @@ interface IProps {
   [key: string]: any;
 }
 
-export class WrappedTestComponent<CustomComponent, WrapperComponent> extends ConfiguredTestComp<CustomComponent> {
+export class WrappedComponent<CustomComponent, WrapperComponent> extends ConfiguredTestComp<CustomComponent> {
   public fixture: ComponentFixture<WrapperComponent>;
   public parentInstance: WrapperComponent;
   public parentElement;

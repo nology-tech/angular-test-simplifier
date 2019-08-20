@@ -1,14 +1,14 @@
 {
   "name": "@nology/angular-test-simplifier",
-  "version": "0.0.11",
+  "version": "0.0.14",
   "description": "Simplifies testing in angular/cli applications",
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run build && jasmine",
-    "build": "tsc --build --clean",
+    "build": "gulp clean && tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "publish": " npm publish --access public"
+    "pub": "npm run build && npm publish"
   },
   "files": [
     "dist/**/*"
@@ -29,15 +29,17 @@
     "@types/jasmine": "^3.4.0",
     "@types/node": "^12.7.2",
     "codelyzer": "^5.1.0",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
     "jasmine": "^3.4.0",
     "jasmine-core": "^3.4.0",
     "jasmine-spec-reporter": "^4.2.1",
     "jasmine-ts": "^0.3.0",
     "jasmine-ts-console-reporter": "^3.1.1",
+    "mem": ">=4.0.0",
     "prettier": "^1.18.2",
     "rxjs": "^6.5.2",
     "ts-node": "^8.3.0",
-    "mem": ">=4.0.0",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.3",

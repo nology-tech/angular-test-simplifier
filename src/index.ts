@@ -1,5 +1,5 @@
-import { TestComponent } from './component';
-import { WrappedTestComponent } from './integration';
+import { Component } from './component';
+import { WrappedComponent } from './integration';
 
-export const Component = TestComponent;
-export const IntegrationComponent = WrappedTestComponent;
+export const TestComponent = Component;
+export const IntegrationComponent = WrappedComponent;
