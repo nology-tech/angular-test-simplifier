@@ -1,11 +1,11 @@
 {
   "name": "@nology/angular-test-simplifier",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Simplifies testing in angular/cli applications",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc && jasmine",
-    "build": "tsc",
+    "test": "npm run build && jasmine",
+    "build": "tsc --build --clean",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "publish": " npm publish --access public"
