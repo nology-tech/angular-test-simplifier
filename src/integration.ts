@@ -33,4 +33,8 @@ export class WrappedComponent<CustomComponent, WrapperComponent> extends Configu
     });
     this.updateFixture();
   }
+
+  public querySelector(element: string) {
+    return this.parentElement.querySelector(element);
+  }
 }
