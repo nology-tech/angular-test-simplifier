@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 import { ComponentFixture, TestBed, TestModuleMetadata } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 interface IProps {
   [key: string]: any;
@@ -36,6 +37,10 @@ export class ConfiguredTestComp<CustomComponent> {
 
   public querySelector(element: string) {
     return this.element.querySelector(element);
+  }
+
+  public queryElementCount(cssSelector: string) {
+    return this.fixture.debugElement.queryAll(By.css(cssSelector)).length;
   }
 
   public setProps(properties: IProps) {
