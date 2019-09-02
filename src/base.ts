@@ -11,8 +11,6 @@ export class ConfiguredTestComp<CustomComponent> {
   public fixture: ComponentFixture<any>;
   public instance: CustomComponent;
   public element;
-  // declarations: any[];
-  // imports: any[];
   protected config: TestModuleMetadata = {
     declarations: [],
     imports: [],
