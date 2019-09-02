@@ -34,7 +34,7 @@ export class WrappedComponent<CustomComponent, WrapperComponent> extends Configu
     this.updateFixture();
   }
 
-  public querySelector(element: string) {
+  public query(element: string) {
     return this.parentElement.querySelector(element);
   }
 }

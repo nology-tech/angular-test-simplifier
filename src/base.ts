@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 import { ComponentFixture, TestBed, TestModuleMetadata } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 interface IProps {
   [key: string]: any;
@@ -32,8 +33,12 @@ export class ConfiguredTestComp<CustomComponent> {
     this.fixture.detectChanges();
   }
 
-  public querySelector(element: string) {
+  public query(element: string) {
     return this.element.querySelector(element);
+  }
+
+  public queryAll(cssSelector: string) {
+    return this.fixture.debugElement.queryAll(By.css(cssSelector));
   }
 
   public setProps(properties: IProps) {
@@ -49,7 +54,7 @@ export class ConfiguredTestComp<CustomComponent> {
   }
 
   public triggerEvent(selector: string, eventType: EventTypes, value?: string) {
-    const targetElem = this.querySelector(selector);
+    const targetElem = this.query(selector);
     if (value) {
       targetElem.value = value;
     }
