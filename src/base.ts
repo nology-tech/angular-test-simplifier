@@ -38,7 +38,9 @@ export class ConfiguredTestComp<CustomComponent> {
   }
 
   public queryAll(cssSelector: string) {
-    return this.fixture.debugElement.queryAll(By.css(cssSelector));
+    let result = this.fixture.debugElement.queryAll(By.css(cssSelector));
+    console.log(result.length);
+    return result;
   }
 
   public setProps(properties: IProps) {

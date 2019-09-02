@@ -1,9 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
     "declaration": true,
-    "outDir": "./dist"
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "outDir": "./dist",
+    "lib": ["es2018", "dom"]
   },
   "include": ["src", "gulpfile.js"],
   "exclude": ["node_modules", "**/__tests__/*"]
