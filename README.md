@@ -8,7 +8,7 @@ The purpose of this package is to build on top of Jasmine functionality rather t
 
 ## Current version and state of affairs
 
-The current version number is... In it's current version the a-t-s is untested and therefor should not be used in a enterprise level production application. It is however being utilised in a number of projects to successfully replace existing tests written using Jasmine alone.
+The current version number is 0.1.3 In it's current version the a-t-s is untested and therefore should not be used in a enterprise level production application. It is however being utilised in a number of projects to successfully replace existing tests written using Jasmine alone.
 
 ## Installation
 
