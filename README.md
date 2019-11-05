@@ -182,6 +182,65 @@ it("should ..............", () => {
 });
 ```
 
+### Example tests using Jamsine syntax
+
+#### Searching for text content on page
+
+The textContent rendered on the page can be accessed through the test component element property.c
+
+```
+it("should ..............", () => {
+
+    /////
+
+    const searchTerm: string = "Text to check for";
+
+    expect(testComp.element.textContent).toContain(searchTerm);
+
+    /////
+
+});
+```
+
+#### Checking component property
+
+Properties on the component class can be accessed through the test component instance property.
+
+```
+it("should ..............", () => {
+
+    /////
+
+    const expectedValue = "x";
+
+    expect(testComp.instance.property).toEqual(expectedValue)
+
+    /////
+
+});
+```
+
+#### Calling component method
+
+Methods on the component class can be accessed through the test component instance property.
+
+```
+it("should ..............", () => {
+
+    /////
+
+    expect(testComp.instance.property).toEqual(intialValue);
+
+    testComp.instance.methodToBeCalled();
+
+    expect(testComp.instance.property).toEqual(updatedValue);
+
+
+    /////
+
+});
+```
+
 ## IntegrationComponent
 
 The integration component provides a mock rendering of two components, one nested inside the other. This allows you to component component integration tests on the passage of data and event listening between the two.
@@ -235,4 +294,42 @@ Example implementation:
       label: "Test string"
     });
     expect(testComp.instance.label).toBe("Test string");
+```
+
+### Example tests using Jamsine syntax
+
+#### Searching for text content on page
+
+```
+it("should ..............", () => {
+
+    /////
+
+    const searchTerm: string = "Text to check for";
+
+    expect(testComp.parentElement.textContent).toContain(searchTerm);
+
+    /////
+
+});
+```
+
+#### Spying on parent component method
+
+Methods on the parent component class can be accessed through the IntegrationComponent parentInstance property.
+
+```
+it("should ..............", () => {
+
+    /////
+
+    const spy = spyOn(testIntegrationComp.parentInstance, "methodToBeSpiedOn");
+
+    // Action takes place
+
+    expect(spy).toHaveBeenCalled();
+
+    /////
+
+});
 ```
