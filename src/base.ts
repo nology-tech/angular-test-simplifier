@@ -6,7 +6,7 @@ interface IProps {
   [key: string]: any;
 }
 
-type EventTypes = 'input' | 'click' | 'change';
+type EventTypes = 'input' | 'click' | 'change' | 'keydown' | 'keyup';
 
 export class ConfiguredTestComp<CustomComponent> {
   public fixture: ComponentFixture<any>;
@@ -54,12 +54,16 @@ export class ConfiguredTestComp<CustomComponent> {
     return this.instance[methodReference];
   }
 
-  public triggerEvent(selector: string, eventType: EventTypes, value?: string) {
+  public triggerEvent(selector: string, eventType: EventTypes, keyName?: string, value?: string) {
     const targetElem = this.query(selector);
     if (value) {
       targetElem.value = value;
     }
+    if (eventType === 'keydown' || eventType === 'keyup') {
+      targetElem.dispatchEvent(new KeyboardEvent(eventType, {'key': keyName}));
+    } else {
     targetElem.dispatchEvent(new Event(eventType));
+    }
     this.updateFixture();
   }
 
