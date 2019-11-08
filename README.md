@@ -216,11 +216,11 @@ it("should ..............", () => {
 
     /////
 
-    testComp.triggerEvent("section", "keyup");
+    testComp.triggerKeyEvent("section", "keyup");
 
     /////
 
-    testComp.triggerEvent(".nav-bar", "keydown", "15");
+    testComp.triggerKeyEvent(".nav-bar", "keydown", "15");
 
     /////
 
