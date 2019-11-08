@@ -54,15 +54,15 @@ export class ConfiguredTestComp<CustomComponent> {
     return this.instance[methodReference];
   }
 
-  public triggerEvent(selector: string, eventType: EventTypes, keyName?: string, value?: string) {
+  public triggerEvent(selector: string, eventType: EventTypes, value?: string) {
     const targetElem = this.query(selector);
-    if (value) {
+    if (eventType === "keydown" || eventType === "keyup") {
+      targetElem.dispatchEvent(new KeyboardEvent(eventType, { code: value }));
+    } else if (value) {
       targetElem.value = value;
-    }
-    if (eventType === 'keydown' || eventType === 'keyup') {
-      targetElem.dispatchEvent(new KeyboardEvent(eventType, {'key': keyName}));
+      targetElem.dispatchEvent(new Event(eventType));
     } else {
-    targetElem.dispatchEvent(new Event(eventType));
+      targetElem.dispatchEvent(new Event(eventType));
     }
     this.updateFixture();
   }
