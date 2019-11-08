@@ -164,11 +164,8 @@ Available Event Types:
 - 'input'
 - 'click'
 - 'change'
-- 'keydown'
-- 'keyup'
 
 N.B. : 
-- If the event type is a 'keyup' or 'keydown', the optional value parameter can only be set   to a keycode as a string (e.g. '13' for the enter key). 
 - If the event type is 'change' or 'input', the optional value parameter can be set to a      value of what you want to pass through in the event (e.g. 'search content').
 - If the event type is a 'click', no value parameter needs to be assigned.
 
@@ -192,11 +189,36 @@ it("should ..............", () => {
 
     /////
 
-    testComp.triggerEvent("section", "keyup");
+});
+```
+
+#### .triggerKeyEvent( )
+
+Method takes in a target element and an event type (with an optional parameter of the event value) then triggers that event.
+
+Parameters:
+
+- cssSelector: string
+- eventType: string
+- keycode: string
+
+Available Event Types: 
+- 'keydown'
+- 'keyup'
+
+
+Example implementations:
+
+```
+it("should ..............", () => {
 
     /////
 
-    testComp.triggerEvent(".nav-bar", "keydown", "15");
+    testComp.triggerKeyEvent("section", "keyup");
+
+    /////
+
+    testComp.triggerKeyEvent(".nav-bar", "keydown", 15);
 
     /////
 
