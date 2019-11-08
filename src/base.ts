@@ -54,17 +54,20 @@ export class ConfiguredTestComp<CustomComponent> {
     return this.instance[methodReference];
   }
 
+  private dispatchEvent(targetElem: HTMLElement, event: Event) {
+    targetElem.dispatchEvent(event);
+    this.updateFixture();
+  }
+
+  public triggerKeyEvent(selector: string, eventType: EventTypes, value?: string) {
+    const targetElem = this.query(selector);
+    this.dispatchEvent(targetElem, new KeyboardEvent(eventType, { code: value }));
+  }
+
   public triggerEvent(selector: string, eventType: EventTypes, value?: string) {
     const targetElem = this.query(selector);
-    if (eventType === "keydown" || eventType === "keyup") {
-      targetElem.dispatchEvent(new KeyboardEvent(eventType, { code: value }));
-    } else if (value) {
-      targetElem.value = value;
-      targetElem.dispatchEvent(new Event(eventType));
-    } else {
-      targetElem.dispatchEvent(new Event(eventType));
-    }
-    this.updateFixture();
+    if (value) targetElem.value = value;
+    this.dispatchEvent(targetElem, new Event(eventType));
   }
 
   protected compileComponents() {
