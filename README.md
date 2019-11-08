@@ -160,6 +160,19 @@ Parameters:
 - eventType: string
 - (optional) value: string
 
+Available Event Types: 
+- 'input'
+- 'click'
+- 'change'
+- 'keydown'
+- 'keyup'
+
+N.B. : 
+- If the event type is a 'keyup' or 'keydown', the optional value parameter can only be set   to a keycode as a string (e.g. '13' for the enter key). 
+- If the event type is 'change' or 'input', the optional value parameter can be set to a      value of what you want to pass through in the event (e.g. 'search content').
+- If the event type is a 'click', no value parameter needs to be assigned.
+
+
 Example implementations:
 
 ```
@@ -176,6 +189,14 @@ it("should ..............", () => {
     /////
 
     testComp.triggerEvent("input[type='range']", "change", "42");
+
+    /////
+
+    testComp.triggerEvent("section", "keyup");
+
+    /////
+
+    testComp.triggerEvent(".nav-bar", "keydown", "15");
 
     /////
 
