@@ -59,9 +59,9 @@ export class ConfiguredTestComp<CustomComponent> {
     this.updateFixture();
   }
 
-  public triggerKeyEvent(selector: string, eventType: EventTypes, value?: string) {
+  public triggerKeyEvent(selector: string, eventType: EventTypes, keycode: number) {
     const targetElem = this.query(selector);
-    this.dispatchEvent(targetElem, new KeyboardEvent(eventType, { code: value }));
+    this.dispatchEvent(targetElem, new KeyboardEvent(eventType, { code: keycode.toString() }));
   }
 
   public triggerEvent(selector: string, eventType: EventTypes, value?: string) {

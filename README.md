@@ -200,14 +200,12 @@ Parameters:
 
 - cssSelector: string
 - eventType: string
-- (optional) value: string
+- keycode: string
 
 Available Event Types: 
 - 'keydown'
 - 'keyup'
 
-N.B. : 
-- The optional value parameter can only be set to a keycode as a string (e.g. '13' for the enter key). 
 
 Example implementations:
 
@@ -220,7 +218,7 @@ it("should ..............", () => {
 
     /////
 
-    testComp.triggerKeyEvent(".nav-bar", "keydown", "15");
+    testComp.triggerKeyEvent(".nav-bar", "keydown", 15);
 
     /////
 
